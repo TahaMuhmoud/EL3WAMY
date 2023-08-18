@@ -135,7 +135,7 @@ export default function Example() {
           <div className="flex items-center justify-between">
             <Link href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src="assets/EL3WAMY.svg" alt="" />
+              <img className="h-8 w-auto" src="assets/EL3WAMY.png" alt="" />
             </Link>
             <button
               type="button"

@@ -72,6 +72,7 @@ function App() {
       <Route path="/" element={<RootLauout />} errorElement={<Error />}>
         <Route index element={<Home />} loader={trendingLoader} />
         <Route path="/home" element={<Home />} loader={trendingLoader} />
+        <Route path="/movies-site" element={<Home />} loader={trendingLoader} />
 
         <Route
           path="/movie/:id"

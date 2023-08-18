@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Reenie+Beanie&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+@layer {
+  .bb-grad {
+    @apply bg-gradient-to-b from-[#000000];
+  }
+  .sec-bg {
+    @apply after:content-[''] after:absolute after:top-0 after:left-0 after:inset-0 after:bg-mainSecGradient;
+  }
+  .img-topLayer-black-gradient {
+    @apply after:content-[''] after:absolute after:top-0 after:left-0 after:inset-0
+    after:bg-black-gradient-to-transparent;
+  }
+  .img-topLayer-white-gradient {
+    @apply after:content-[''] after:absolute after:top-0 after:left-0 after:inset-0
+    after:bg-white-gradient-to-transparent;
+  }
+  
+}
+
+:root {
+  --mainClr: #9501ff;
+  --mainClr-50: hsla(275, 100%, 50%, 0.5);
+}
+* {
+  text-transform: capitalize;
+}
+body {
+  background-color: black;
+  width: 100vw;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+
+.active{
+  opacity: 1;
+}
+
+.overveiw::-webkit-scrollbar,
+.biography::-webkit-scrollbar,
+.posters-imgs::-webkit-scrollbar,
+.searched-sec::-webkit-scrollbar,
+.home-sec::-webkit-scrollbar {
+  width: 3px;
+  height: 6px;
+}
+.overveiw::-webkit-scrollbar-track,
+.biography::-webkit-scrollbar-track,
+.posters-imgs::-webkit-scrollbar-track,
+.searched-sec::-webkit-scrollbar-track,
+.home-sec::-webkit-scrollbar-track {
+  border: 1px rgba(255, 255, 255, 0.127) solid;
+}
+.overveiw::-webkit-scrollbar-thumb,
+.biography::-webkit-scrollbar-thumb,
+.posters-imgs::-webkit-scrollbar-thumb,
+.searched-sec::-webkit-scrollbar-thumb,
+.home-sec::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(90deg,transparent, var(--mainClr),transparent);
+  border-radius: 5px;
+}

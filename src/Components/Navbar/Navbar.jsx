@@ -91,15 +91,7 @@ export default function Example() {
         aria-label="Global"
       >
         <div className="flex ">
-          <div
-            onClick={() => {
-              navigate("/");
-            }}
-            className="-m-1.5 p-1.5 cursor-pointer"
-          >
-            <span className="sr-only">Your Company</span>
-            <img className="w-[120px]" src={logo} alt="" />
-          </div>
+          <img className="w-[120px]" src={logo} alt="" />
         </div>
         <div className="w-1/4 flex justify-end lg:hidden">
           <button

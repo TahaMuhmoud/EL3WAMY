@@ -2,6 +2,7 @@ import React from "react";
 import { FiToggleRight } from "react-icons/fi";
 import MainCarousel from "../Components/Home/Carousel";
 import SearchBar from "../Components/SearchBar/SearchBar";
+import logo from "./EL3WAMY.svg";
 const mainTitle = Array.from("trending");
 
 export default function LandingPage({ results }) {
@@ -12,7 +13,7 @@ export default function LandingPage({ results }) {
           <MainCarousel results={results} />
           <div className="titel container absolute left-1/2 -translate-x-1/2 max-w-full px-10 sm:max-w-[900px] h-full mx-auto text-lg text-white text-center flex flex-col justify-center items-center lg:justify-start lg:pt-32 gap-20  z-10 ">
             <img
-              src="../assets/EL3WAMY.svg"
+              src={logo}
               alt=""
               className="w-[400px] sm:w-[600px]"
               loading="lazy"

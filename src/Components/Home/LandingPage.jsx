@@ -1,8 +1,8 @@
 import React from "react";
 import { FiToggleRight } from "react-icons/fi";
-import MainCarousel from "../Components/Home/Carousel";
-import SearchBar from "../Components/SearchBar/SearchBar";
-import logo from "./EL3WAMY.svg";
+import MainCarousel from "./Carousel";
+import SearchBar from "../SearchBar/SearchBar";
+import logo from "../../assets/EL3WAMY.svg";
 const mainTitle = Array.from("trending");
 
 export default function LandingPage({ results }) {

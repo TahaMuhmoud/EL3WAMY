@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import LandingPage from "../../assets/LandingPage";
+import LandingPage from "../../Components/Home/LandingPage";
 import { useLoaderData } from "react-router-dom";
 import {
   getPopularMovies,

@@ -1,3 +1,5 @@
+
+
 import {
   Route,
   RouterProvider,
@@ -64,15 +66,15 @@ const AiringtodayTvsLazy = React.lazy(() =>
 );
 
 function App() {
+  
   const browserRouter = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLauout />} errorElement={<Error />}>
+      <Route path="/EL3WAMY" element={<RootLauout />} errorElement={<Error />}>
         <Route index element={<Home />} loader={trendingLoader} />
-        <Route path="/home" element={<Home />} loader={trendingLoader} />
-        <Route path="/EL3WAMY" element={<Home />} loader={trendingLoader} />
+        <Route path="EL3WAMY/home" element={<Home />} loader={trendingLoader} />
 
         <Route
-          path="/movie/:id"
+          path="EL3WAMY/movie/:id"
           element={
             <React.Suspense fallback={<Loading />}>
               <MovieDetailsLazy />
@@ -82,7 +84,7 @@ function App() {
         />
 
         <Route
-          path="/tv/:id"
+          path="EL3WAMY/tv/:id"
           element={
             <React.Suspense fallback={<Loading />}>
               <SeriesDetailsLazy />
@@ -91,7 +93,7 @@ function App() {
           loader={seriesDetailsLoader}
         />
         <Route
-          path="/season"
+          path="EL3WAMY/season"
           element={<SeasonPage />}
           loader={seasonDetailsLoader}
         >
@@ -108,7 +110,7 @@ function App() {
           </Route>
         </Route>
         <Route
-          path="/eposide"
+          path="EL3WAMY/eposide"
           element={<EposideDetails />}
           loader={eposideDataLoader}
         >
@@ -130,14 +132,18 @@ function App() {
             </Route>
           </Route>
         </Route>
-        <Route path="/person" element={<Person />} loader={personDetailsLoader}>
+        <Route
+          path="EL3WAMY/person"
+          element={<Person />}
+          loader={personDetailsLoader}
+        >
           <Route path=":id" element={<Person />} loader={personDetailsLoader} />
         </Route>
 
         {/*  */}
         {/*  */}
         {/*  */}
-        <Route basename="/EL3WAMY" path="/movies" element={<Movies />}>
+        <Route path="EL3WAMY/movies" element={<Movies />}>
           <Route
             index
             element={
@@ -147,7 +153,7 @@ function App() {
             }
           />
           <Route
-            path="/movies/popular"
+            path="/EL3WAMY/movies/popular"
             element={
               <React.Suspense fallback={<Loading />}>
                 <PopularMoviesLazy />
@@ -155,7 +161,7 @@ function App() {
             }
           />
           <Route
-            path="/movies/toprated"
+            path="/EL3WAMY/movies/toprated"
             element={
               <React.Suspense fallback={<Loading />}>
                 <TopRatedMoviesLazy />
@@ -163,7 +169,7 @@ function App() {
             }
           />
           <Route
-            path="/movies/nowplaying"
+            path="/EL3WAMY/movies/nowplaying"
             element={
               <React.Suspense fallback={<Loading />}>
                 <MoviesNowPlayingLazy />
@@ -171,7 +177,7 @@ function App() {
             }
           />
           <Route
-            path="/movies/upcoming"
+            path="/EL3WAMY/movies/upcoming"
             element={
               <React.Suspense fallback={<Loading />}>
                 <MoviesUpcomingLazy />
@@ -184,7 +190,7 @@ function App() {
         {/*  */}
         {/*  */}
         {/*  */}
-        <Route path="/tvs" element={<Tvs />}>
+        <Route path="EL3WAMY/tvs" element={<Tvs />}>
           <Route
             index
             element={
@@ -194,7 +200,7 @@ function App() {
             }
           />
           <Route
-            path="/tvs/popular"
+            path="/EL3WAMY/tvs/popular"
             element={
               <React.Suspense fallback={<Loading />}>
                 <PopularTvsLazy />
@@ -202,7 +208,7 @@ function App() {
             }
           />
           <Route
-            path="/tvs/toprated"
+            path="/EL3WAMY/tvs/toprated"
             element={
               <React.Suspense fallback={<Loading />}>
                 <TopRatedTvsLazy />
@@ -210,7 +216,7 @@ function App() {
             }
           />
           <Route
-            path="/tvs/onair"
+            path="/EL3WAMY/tvs/onair"
             element={
               <React.Suspense fallback={<Loading />}>
                 <TvsOntheairLazy />
@@ -218,7 +224,7 @@ function App() {
             }
           />
           <Route
-            path="/tvs/airingtoday"
+            path="/EL3WAMY/tvs/airingtoday"
             element={
               <React.Suspense fallback={<Loading />}>
                 <AiringtodayTvsLazy />

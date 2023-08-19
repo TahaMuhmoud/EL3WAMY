@@ -69,10 +69,9 @@ function App() {
   
   const browserRouter = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLauout />} errorElement={<Error />}>
+      <Route path="/ELA3WAMY" element={<RootLauout />} errorElement={<Error />}>
         <Route index element={<Home />} loader={trendingLoader} />
         <Route path="/home" element={<Home />} loader={trendingLoader} />
-        <Route path="/movies-site" element={<Home />} loader={trendingLoader} />
 
         <Route
           path="/movie/:id"
@@ -187,53 +186,56 @@ function App() {
         {/*  */}
         {/*  */}
         {/*  */}
-        <Route path="/tvs" element={ <Tvs/> }>
+        <Route path="/tvs" element={<Tvs />}>
           <Route
-          index
-          element={
-            <React.Suspense fallback={<Loading />}>
-              <PopularTvsLazy />
-            </React.Suspense>
-          }
-        />
+            index
+            element={
+              <React.Suspense fallback={<Loading />}>
+                <PopularTvsLazy />
+              </React.Suspense>
+            }
+          />
           <Route
-          path="/tvs/popular"
-          element={
-            <React.Suspense fallback={<Loading />}>
-              <PopularTvsLazy />
-            </React.Suspense>
-          }
-        />
-        <Route
-          path="/tvs/toprated"
-          element={
-            <React.Suspense fallback={<Loading />}>
-              <TopRatedTvsLazy />
-            </React.Suspense>
-          }
-        />
-        <Route
-          path="/tvs/onair"
-          element={
-            <React.Suspense fallback={<Loading />}>
-              <TvsOntheairLazy />
-            </React.Suspense>
-          }
-        />
-        <Route
-          path="/tvs/airingtoday"
-          element={
-            <React.Suspense fallback={<Loading />}>
-              <AiringtodayTvsLazy />
-            </React.Suspense>
-          }
-        />
+            path="/tvs/popular"
+            element={
+              <React.Suspense fallback={<Loading />}>
+                <PopularTvsLazy />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="/tvs/toprated"
+            element={
+              <React.Suspense fallback={<Loading />}>
+                <TopRatedTvsLazy />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="/tvs/onair"
+            element={
+              <React.Suspense fallback={<Loading />}>
+                <TvsOntheairLazy />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="/tvs/airingtoday"
+            element={
+              <React.Suspense fallback={<Loading />}>
+                <AiringtodayTvsLazy />
+              </React.Suspense>
+            }
+          />
         </Route>
         {/*  */}
         {/*  */}
         {/*  */}
         {/*  */}
-        <Route path="/videonotavailable/:type/:id" element={<VideoNotavailable/>}/>
+        <Route
+          path="/videonotavailable/:type/:id"
+          element={<VideoNotavailable />}
+        />
         <Route path="/notfound" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Route>

@@ -237,10 +237,10 @@ function App() {
         {/*  */}
         {/*  */}
         <Route
-          path="/videonotavailable/:type/:id"
+          path="videonotavailable/:type/:id"
           element={<VideoNotavailable />}
         />
-        <Route path="/notfound" element={<NotFound />} />
+        <Route path="notfound" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     )

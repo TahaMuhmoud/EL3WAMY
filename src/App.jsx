@@ -69,7 +69,12 @@ function App() {
   
   const browserRouter = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLauout />} errorElement={<Error />}>
+      <Route
+        basename="/EL3WAMY"
+        path="/"
+        element={<RootLauout />}
+        errorElement={<Error />}
+      >
         <Route index element={<Home />} loader={trendingLoader} />
         <Route path="/home" element={<Home />} loader={trendingLoader} />
         <Route path="/EL3WAMY" element={<Home />} loader={trendingLoader} />

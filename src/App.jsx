@@ -70,7 +70,6 @@ function App() {
   const browserRouter = createBrowserRouter(
     createRoutesFromElements(
       <Route
-        basename="/EL3WAMY"
         path="/"
         element={<RootLauout />}
         errorElement={<Error />}
@@ -247,7 +246,7 @@ function App() {
       </Route>
     )
   );
-  return <RouterProvider router={browserRouter} />;
+  return <RouterProvider basename="/EL3WAMY" router={browserRouter} />;
 }
 
 export default App;

@@ -41,7 +41,7 @@ export const Home = () => {
           }`}
         >
           <div className="h-full text-9xl mx-auto flex flex-col items-center">
-            {loading===true ? <Loading /> : ""}
+            {loading===false ? <Loading /> : ""}
             <LandingPage results={trending_movies} />
             {/*  */}
             {/*  */}

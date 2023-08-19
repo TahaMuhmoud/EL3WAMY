@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { ConfigrationContext } from "../../ConfigrationContext";
 import { TbArrowBadgeLeft, TbArrowBadgeRight } from "react-icons/tb";
 import { useDraggable } from "react-use-draggable-scroll";
+import avatar from "../../assets/avatar.svg";
 
 function Eposides({ seasonDetails, setLoading }) {
   // CONFIGRATION DATA FOR BASE_URL IMAGES
@@ -96,7 +97,7 @@ function Eposides({ seasonDetails, setLoading }) {
                             ? `${base_url}${backdrop_sizes[3]}${poster_path}`
                             : backdrop_path
                             ? `${base_url}${backdrop_sizes[3]}${backdrop_path}`
-                            : "assets/avatar.svg"
+                            : { avatar }
                         }
                         alt="assets/avatar.svg"
                         loading="lazy"

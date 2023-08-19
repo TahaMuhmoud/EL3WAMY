@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { GoDotFill } from "react-icons/go";
+import { GoDotFill } from "react-icons/go"; 
+import avatar from "../../assets/avatar.svg";
 import {
   FaFacebook,
   FaInstagram,
@@ -234,7 +235,7 @@ function PersonLandingPage({ personData, imgsData }) {
                 loading="lazy"
               />
             ) : (
-              "/assets/avatar.svg"
+              { avatar }
             )}
           </div>
         </div>

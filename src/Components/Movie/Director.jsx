@@ -28,7 +28,7 @@ function Director({ movieData, imagesPathData, setLoading }) {
           className="director flex flex-col items-center"
           onClick={() => {
             setLoading(true);
-            window.scrollTo({top:0})
+            window.scrollTo({ top: 0 });
           }}
         >
           <span className="bg-[#ffffff2c] w-1/2 h-[1px] mb-10"></span>
@@ -40,7 +40,7 @@ function Director({ movieData, imagesPathData, setLoading }) {
                 src={
                   dirctors[0]["profile_path"] !== null
                     ? `${base_url}${profile_sizes[3]}${dirctors[0]["profile_path"]}`
-                    : "/assets/avatar.svg"
+                    : { avatar }
                 }
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover object-top"

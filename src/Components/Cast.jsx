@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { ConfigrationContext } from "../ConfigrationContext";
 import { RxDoubleArrowLeft, RxDoubleArrowRight } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import avatar from "../assets/avatar.svg";
 
 function Cast({ backdrop_path, poster_path, cast, castType, setLoading }) {
   const [actorsPage, setActorsPage] = useState(0);
@@ -35,7 +36,7 @@ function Cast({ backdrop_path, poster_path, cast, castType, setLoading }) {
                       src={
                         actor["profile_path"]
                           ? `${base_url}${profile_sizes[3]}${actor["profile_path"]}`
-                          : "/assets/avatar.svg"
+                          : { avatar }
                       }
                       alt="assets/avatar.svg"
                       loading="lazy"

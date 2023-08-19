@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ConfigrationContext } from "../../ConfigrationContext";
-
+import avatar from "../../assets/avatar.svg";
 function TvCreatedBy({ seriesData,setLoading }) {
   // CONFIGRATION DATA FOR BASE_URL IMAGES
   let { configData } = useContext(ConfigrationContext);
@@ -33,7 +33,7 @@ function TvCreatedBy({ seriesData,setLoading }) {
                     src={
                       created_by[0]["profile_path"] !== null
                         ? `${base_url}${profile_sizes[3]}${created_by[0]["profile_path"]}`
-                        : "/assets/avatar.svg"
+                        : { avatar }
                     }
                     alt=""
                     loading="lazy"

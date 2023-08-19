@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Dialog, Disclosure, Popover } from "@headlessui/react"; // Initialization for ES Users
 import { Ripple, initTE } from "tw-elements";
-import logo from "./EL3WAMY.svg";
+import logo from "../../assets/EL3WAMY.svg";
 
 import {
   Bars3Icon,

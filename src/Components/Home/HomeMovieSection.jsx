@@ -77,6 +77,9 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
                   loading="lazy"
                   width={300}
                   height={128}
+                  onLoad={() => {
+                    setLoading(false);
+                  }}
                 />
               </div>
 

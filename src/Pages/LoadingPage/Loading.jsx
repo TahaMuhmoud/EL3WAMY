@@ -2,7 +2,7 @@ import React from 'react'
 
 function Loading() {
   return (
-    <div className="bg-black w-full h-screen fixed inset-0 z-[60] flex items-center justify-center">
+    <div className="bg-red-500 w-full h-screen fixed inset-0 z-[60] flex items-center justify-center">
       <div
         className="m-12 inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite] text-mainColor-100"
         role="status"

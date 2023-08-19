@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Dialog, Disclosure, Popover } from "@headlessui/react"; // Initialization for ES Users
 import { Ripple, initTE } from "tw-elements";
-import logo from "../../assets/EL3WAMY.svg";
+import logo from "./EL3WAMY.svg";
 
 import {
   Bars3Icon,
@@ -98,7 +98,7 @@ export default function Example() {
             className="-m-1.5 p-1.5 cursor-pointer"
           >
             <span className="sr-only">Your Company</span>
-            <img className="w-[120px]" src="src/assets/EL3WAMY.svg" alt="" />
+            <img className="w-[120px]" src={logo} alt="" />
           </div>
         </div>
         <div className="w-1/4 flex justify-end lg:hidden">

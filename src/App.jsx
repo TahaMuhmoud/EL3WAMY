@@ -1,5 +1,3 @@
-
-
 import {
   Route,
   RouterProvider,
@@ -66,14 +64,9 @@ const AiringtodayTvsLazy = React.lazy(() =>
 );
 
 function App() {
-  
   const browserRouter = createBrowserRouter(
     createRoutesFromElements(
-      <Route
-        path="/"
-        element={<RootLauout />}
-        errorElement={<Error />}
-      >
+      <Route path="/" element={<RootLauout />} errorElement={<Error />}>
         <Route index element={<Home />} loader={trendingLoader} />
         <Route path="/home" element={<Home />} loader={trendingLoader} />
         <Route path="/EL3WAMY" element={<Home />} loader={trendingLoader} />
@@ -144,7 +137,7 @@ function App() {
         {/*  */}
         {/*  */}
         {/*  */}
-        <Route path="/movies" element={<Movies />}>
+        <Route basename="/EL3WAMY" path="/movies" element={<Movies />}>
           <Route
             index
             element={
@@ -246,7 +239,7 @@ function App() {
       </Route>
     )
   );
-  return <RouterProvider basename="/EL3WAMY" router={browserRouter} />;
+  return <RouterProvider router={browserRouter} />;
 }
 
 export default App;

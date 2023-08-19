@@ -71,10 +71,10 @@ function App() {
     createRoutesFromElements(
       <Route path="/EL3WAMY" element={<RootLauout />} errorElement={<Error />}>
         <Route index element={<Home />} loader={trendingLoader} />
-        <Route path="EL3WAMY/home" element={<Home />} loader={trendingLoader} />
+        <Route path="/EL3WAMY/home" element={<Home />} loader={trendingLoader} />
 
         <Route
-          path="EL3WAMY/movie/:id"
+          path="/EL3WAMY/movie/:id"
           element={
             <React.Suspense fallback={<Loading />}>
               <MovieDetailsLazy />
@@ -84,7 +84,7 @@ function App() {
         />
 
         <Route
-          path="EL3WAMY/tv/:id"
+          path="/EL3WAMY/tv/:id"
           element={
             <React.Suspense fallback={<Loading />}>
               <SeriesDetailsLazy />
@@ -93,7 +93,7 @@ function App() {
           loader={seriesDetailsLoader}
         />
         <Route
-          path="EL3WAMY/season"
+          path="/EL3WAMY/season"
           element={<SeasonPage />}
           loader={seasonDetailsLoader}
         >
@@ -110,7 +110,7 @@ function App() {
           </Route>
         </Route>
         <Route
-          path="EL3WAMY/eposide"
+          path="/EL3WAMY/eposide"
           element={<EposideDetails />}
           loader={eposideDataLoader}
         >
@@ -133,7 +133,7 @@ function App() {
           </Route>
         </Route>
         <Route
-          path="EL3WAMY/person"
+          path="/EL3WAMY/person"
           element={<Person />}
           loader={personDetailsLoader}
         >
@@ -143,7 +143,7 @@ function App() {
         {/*  */}
         {/*  */}
         {/*  */}
-        <Route path="EL3WAMY/movies" element={<Movies />}>
+        <Route path="/EL3WAMY/movies" element={<Movies />}>
           <Route
             index
             element={
@@ -190,7 +190,7 @@ function App() {
         {/*  */}
         {/*  */}
         {/*  */}
-        <Route path="EL3WAMY/tvs" element={<Tvs />}>
+        <Route path="/EL3WAMY/tvs" element={<Tvs />}>
           <Route
             index
             element={

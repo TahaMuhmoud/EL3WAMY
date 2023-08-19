@@ -69,9 +69,10 @@ function App() {
   
   const browserRouter = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/ELA3WAMY" element={<RootLauout />} errorElement={<Error />}>
+      <Route path="/" element={<RootLauout />} errorElement={<Error />}>
         <Route index element={<Home />} loader={trendingLoader} />
         <Route path="/home" element={<Home />} loader={trendingLoader} />
+        <Route path="/EL3WAMY" element={<Home />} loader={trendingLoader} />
 
         <Route
           path="/movie/:id"

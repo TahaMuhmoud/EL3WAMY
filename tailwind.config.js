@@ -10,7 +10,7 @@ export const theme = {
       "white-gradient-to-transparent":
         "linear-gradient(0deg, hwb(0 100% 0%) 1%, rgba(255, 0, 0, 0) 30%)",
       mainSecGradient:
-        "linear-gradient(180deg,rgb(0, 0, 0) -15%,rgba(0, 0, 0, 0) 80%,rgb(0, 0, 0) 100%),linear-gradient(90deg,rgb(0, 0, 0) -15%,rgba(0, 0, 0, 0) 80%,rgb(0, 0, 0) 100%)",
+        "linear-gradient(180deg,rgb(0, 0, 0) -40%,rgba(0, 0, 0, 0) 80%,rgb(0, 0, 0) 100%),linear-gradient(90deg,rgb(0, 0, 0) -40%,rgba(0, 0, 0, 0) 80%,rgb(0, 0, 0) 100%)",
     },
     colors: {
       mainColor: { 50: "var(--mainClr-50)", 100: "var(--mainClr)" },

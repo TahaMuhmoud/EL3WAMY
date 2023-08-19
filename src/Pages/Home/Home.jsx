@@ -27,11 +27,9 @@ export const Home = () => {
 
   // HANDLE SHOWING THE LODING SCREEN WHEN CLICK ON MOVIE CARD
   const [loading, setLoading] = useState(true);
- 
 
-  useEffect(() => {
-    setLoading(false)
-  },[])
+
+  
   return (
     <>
       {configData.images && loaderData ? (
@@ -41,7 +39,7 @@ export const Home = () => {
           }`}
         >
           <div className="h-full text-9xl mx-auto flex flex-col items-center">
-            {loading===false ? <Loading /> : ""}
+            {loading===true ? <Loading /> : ""}
             <LandingPage results={trending_movies} />
             {/*  */}
             {/*  */}

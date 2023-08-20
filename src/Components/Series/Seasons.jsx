@@ -19,7 +19,7 @@ function Seasons({ seriesData, setLoading }) {
   function replaceWS(line) {
     return Array.from(line)
       .map((litter) => {
-        if (litter === " ") {
+        if (litter === " "||litter==='/') {
           return "♦";
         } else {
           return litter;

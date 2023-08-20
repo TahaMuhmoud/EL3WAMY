@@ -3,14 +3,9 @@ import { Dialog, Disclosure, Popover } from "@headlessui/react"; // Initializati
 import { Ripple, initTE } from "tw-elements";
 import logo from "../../assets/EL3WAMY.svg";
 
-import {
-  Bars3Icon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { BiMoviePlay, BiCameraMovie } from "react-icons/bi";
-import {
-  ChevronDownIcon,
-} from "@heroicons/react/20/solid";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import PopOver from "./Popover";
 import SearchBar from "../SearchBar/SearchBar";
 import { Link, useNavigate } from "react-router-dom";
@@ -90,9 +85,9 @@ export default function Example() {
         className="mx-auto flex container items-center justify-between p-6 lg:px-8 "
         aria-label="Global"
       >
-        <div className="flex ">
+        <Link to='home' className="flex">
           <img className="w-[120px]" src={logo} alt="" />
-        </div>
+        </Link>
         <div className="w-1/4 flex justify-end lg:hidden">
           <button
             type="button"
@@ -126,7 +121,7 @@ export default function Example() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-[10000000] w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="#" className="-m-1.5 p-1.5">
+            <Link href="/home" className="-m-1.5 p-1.5 cursor-pointer">
               <span className="sr-only">Your Company</span>
               <img className="h-8 w-auto" src={logo} alt="" />
             </Link>

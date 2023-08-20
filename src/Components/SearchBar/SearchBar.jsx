@@ -40,6 +40,7 @@ function SearchBar({ showInLarge, setMobileMenuOpen }) {
         .request(options)
         .then(function (response) {
           setSearchedData(response.data.results);
+          console.log(response.data.results);
         })
         .catch(function (error) {
           console.error(error);

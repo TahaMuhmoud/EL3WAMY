@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { GoDotFill } from "react-icons/go"; 
+import { GoDotFill } from "react-icons/go";
 import avatar from "../../assets/avatar.svg";
 import {
   FaFacebook,
+  FaFacebookF,
   FaInstagram,
   FaTiktok,
   FaTwitter,
@@ -12,7 +13,7 @@ import {
 
 function PersonLandingPage({ personData, imgsData }) {
   // CONFIGRATION DATA FOR BASE_URL IMAGES
-  let { base_url, backdrop_sizes, poster_sizes } = imgsData;
+  let { base_url, backdrop_sizes, poster_sizes, still_sizes } = imgsData;
   // .............................
   const {
     images: { profiles },
@@ -47,25 +48,20 @@ function PersonLandingPage({ personData, imgsData }) {
   }
 
   return (
-    <div className="personsec sec-bg w-full h-screen pt-14 overflow-hidden">
-      {profiles[profiles.length - 1] ? (
-        <img
-          src={
-            profile_path
-              ? `${base_url}${backdrop_sizes[3]}${profile_path}`
-              : profiles.length > 0
-              ? `${base_url}${backdrop_sizes[3]}${
-                  profiles[profiles.length - 1]["file_path"]
-                }`
-              : "/assets/avatar.svg"
-          }
-          alt="person img"
-          className="min-w-full min-h-full max-h-full absolute inset-0 object-cover object-center -z-50"
-          loading="lazy"
-        />
-      ) : (
-        ""
-      )}
+    <div
+      className={`personsec sec-bg w-full h-screen pt-14 overflow-hidden bg-auto`}
+      style={{
+        background: `url('${
+          profile_path
+            ? `${base_url}${still_sizes[2]}${profile_path}`
+            : profiles.length > 0
+            ? `${base_url}${still_sizes[2]}${
+                profiles[profiles.length - 1]["file_path"]
+              }`
+            : `${avatar}`
+        }')`,
+      }}
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center absolute inset-0 z-10">
         <div className="details text-white py-20 px-5 sm:p-20 ">
           <div className="text flex flex-col items-center lg:block">
@@ -160,57 +156,63 @@ function PersonLandingPage({ personData, imgsData }) {
               <>
                 <div className="accounts flex items-center gap-5 sm:gap-3">
                   <span>accounts : </span>
-                  {facebook_id ? (
-                    <Link
-                      to={`https://www.facebook.com/${facebook_id}`}
-                      target="_blank"
-                    >
-                      <FaFacebook color="red" fontSize={30} />
-                    </Link>
-                  ) : (
-                    ""
-                  )}
-                  {instagram_id ? (
-                    <Link
-                      to={`https://www.instagram.com/${instagram_id}`}
-                      target="_blank"
-                      className=""
-                    >
-                      <FaInstagram color="red" fontSize={36} />
-                    </Link>
-                  ) : (
-                    ""
-                  )}
-                  {tiktok_id ? (
-                    <Link
-                      to={`https://www.tiktok.com/${tiktok_id}`}
-                      target="_blank"
-                    >
-                      <FaTiktok color="red" fontSize={30} />
-                    </Link>
-                  ) : (
-                    ""
-                  )}
-                  {twitter_id ? (
-                    <Link
-                      to={`https://twitter.com/${twitter_id}`}
-                      target="_blank"
-                    >
-                      <FaTwitter color="red" fontSize={30} />
-                    </Link>
-                  ) : (
-                    ""
-                  )}
-                  {youtube_id ? (
-                    <Link
-                      to={`https://www.youtube.com/${youtube_id}`}
-                      target="_blank"
-                    >
-                      <FaYoutube color="red" fontSize={30} />
-                    </Link>
-                  ) : (
-                    ""
-                  )}
+                  <div className="flex items-center gap-2 ">
+                    {facebook_id ? (
+                      <Link
+                        to={`https://www.facebook.com/${facebook_id}`}
+                        target="_blank"
+                        className="bg-gradient-to-tr from-blue-800 to-blue-300 p-1 rounded-full hover:scale-125 transition-all duration-300"
+                      >
+                        <FaFacebookF className="" fontSize={24} />
+                      </Link>
+                    ) : (
+                      ""
+                    )}
+                    {instagram_id ? (
+                      <Link
+                        to={`https://www.instagram.com/${instagram_id}`}
+                        target="_blank"
+                        className="bg-instaGradient p-1 rounded-full hover:scale-125 transition-all duration-300"
+                      >
+                        <FaInstagram className="" fontSize={24} />
+                      </Link>
+                    ) : (
+                      ""
+                    )}
+                    {tiktok_id ? (
+                      <Link
+                        to={`https://www.tiktok.com/${tiktok_id}`}
+                        target="_blank"
+                        className="bg-gradient-to-tr from-amber-950 to-amber-300 p-1 rounded-full hover:scale-125 transition-all duration-300"
+                      >
+                        <FaTiktok className=" text-black" fontSize={24} />
+                      </Link>
+                    ) : (
+                      ""
+                    )}
+                    {twitter_id ? (
+                      <Link
+                        to={`https://twitter.com/${twitter_id}`}
+                        target="_blank"
+                        className="bg-blue-400 p-1 rounded-full hover:scale-125 transition-all duration-300"
+                      >
+                        <FaTwitter className="" fontSize={24} />
+                      </Link>
+                    ) : (
+                      ""
+                    )}
+                    {youtube_id ? (
+                      <Link
+                        to={`https://www.youtube.com/${youtube_id}`}
+                        target="_blank"
+                        className="bg-gradient-to-tr from-red-700 to-red-300 p-1 rounded-full hover:scale-125 transition-all duration-300"
+                      >
+                        <FaYoutube className="" fontSize={24} />
+                      </Link>
+                    ) : (
+                      ""
+                    )}
+                  </div>
                 </div>
               </>
             ) : (
@@ -224,18 +226,18 @@ function PersonLandingPage({ personData, imgsData }) {
               <img
                 src={`${base_url}${poster_sizes[4]}${profiles[2]["file_path"]}`}
                 alt=""
-                className="absolute inset-0 w-full h-full cursor-pointer hover:grayscale transition-all duration-200"
+                className="absolute inset-0 w-full h-full object-cover cursor-pointer hover:grayscale transition-all duration-200"
                 loading="lazy"
               />
             ) : profiles[0] ? (
               <img
                 src={`${base_url}${poster_sizes[4]}${profiles[0]["file_path"]}`}
                 alt=""
-                className="absolute inset-0 w-full h-full cursor-pointer hover:grayscale transition-all duration-200"
+                className="absolute inset-0 w-full h-full object-cover cursor-pointer hover:grayscale transition-all duration-200"
                 loading="lazy"
               />
             ) : (
-              { avatar }
+              `${avatar}`
             )}
           </div>
         </div>

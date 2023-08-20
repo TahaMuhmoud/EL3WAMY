@@ -97,7 +97,7 @@ function Eposides({ seasonDetails, setLoading }) {
                             ? `${base_url}${backdrop_sizes[3]}${poster_path}`
                             : backdrop_path
                             ? `${base_url}${backdrop_sizes[3]}${backdrop_path}`
-                            : { avatar }
+                            : `${avatar}`
                         }
                         alt="assets/avatar.svg"
                         loading="lazy"

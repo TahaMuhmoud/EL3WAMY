@@ -33,7 +33,7 @@ function TvCreatedBy({ seriesData,setLoading }) {
                     src={
                       created_by[0]["profile_path"] !== null
                         ? `${base_url}${profile_sizes[3]}${created_by[0]["profile_path"]}`
-                        : { avatar }
+                        : `${avatar}`
                     }
                     alt=""
                     loading="lazy"

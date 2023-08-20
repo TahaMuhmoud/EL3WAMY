@@ -9,6 +9,7 @@ import { Ripple, Tooltip, initTE } from "tw-elements";
 import { SortedDataContext } from "../SortedDataContext";
 import { GenersContext } from "../GenersContext";
 import SortMenu from "./SortMenu";
+import avatar from "../assets/avatar.svg";
 
 initTE({ Ripple, Tooltip });
 
@@ -131,7 +132,7 @@ function GridMovies({ text, type, data, setPage, page }) {
                             ? `${base_url}${still_sizes[3]}${movie["poster_path"]}`
                             : movie["_path"]
                             ? `${base_url}${still_sizes[3]}${movie["_path"]}`
-                            : "/assets/EL3WAMY.svg"
+                            : `${avatar}`
                         }
                         alt=""
                         className="w-full h-full object-center object-cover  scale-110 transition-all duration-300"

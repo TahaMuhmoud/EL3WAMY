@@ -3,6 +3,7 @@ import { FiToggleRight } from "react-icons/fi";
 import MainCarousel from "./Carousel";
 import SearchBar from "../SearchBar/SearchBar";
 import logo from "../../assets/EL3WAMY.svg";
+
 const mainTitle = Array.from("trending");
 
 export default function LandingPage({ results }) {

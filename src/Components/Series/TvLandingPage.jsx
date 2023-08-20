@@ -136,9 +136,6 @@ const TvLandingPage = ({ seriesData, setLoading }) => {
                 to={homepage ? homepage : `/videonotavailable/tv/${id}`}
                 target="_blank"
                 className="btn cursor-pointer flex gap-1 sm:gap-2 bg-[#ffffff4a] p-3 pr-5 rounded-full hover:bg-[#ffffff00] hover:border-white hover:border-1"
-                onClick={() => {
-                  setLoading(true);
-                }}
               >
                 <VscDebugStart fontSize={30} color="white" />
                 <span className="text-lg sm:text-xl">watch</span>

@@ -20,7 +20,7 @@ function ImgLayout({ imgSrc, imgShow, setImgShow }) {
         />
         <AiFillCloseCircle
           fontSize={38}
-          className="absolute right-0 top-0 translate-x-1/2 -translate-y-1/2 text-mainColor-100 bg-black rounded-full cursor-pointer"
+          className="absolute right-10 sm:right-0 top-0 translate-x-1/2 -translate-y-1/2 text-mainColor-100 bg-black rounded-full cursor-pointer"
           onClick={(e) => {
             setImgShow(false);
           }}

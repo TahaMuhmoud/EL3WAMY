@@ -1,4 +1,5 @@
 import React from "react";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 function Trailer({ youtubeKey, bol, setBol }) {
   return (
@@ -19,14 +20,13 @@ function Trailer({ youtubeKey, bol, setBol }) {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         ></iframe>
-        <button
-          className="px-5 py-3 text-white rounded-lg bg-mainColor-100 absolute top-0 right-0 -translate-y-1/2 translate-x-1/2"
+        <AiFillCloseCircle
+          fontSize={38}
+          className="absolute right-10 sm:right-0 top-0 translate-x-1/2 -translate-y-1/2 text-mainColor-100 bg-black rounded-full cursor-pointer"
           onClick={(e) => {
             setBol(false);
           }}
-        >
-          cancel
-        </button>
+        />
       </div>
     </div>
   );

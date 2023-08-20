@@ -56,7 +56,8 @@ function PersonMovies({ personData, imgsData, setLoading }) {
                         loading="lazy"
                         className="w-full h-full object-center object-cover scale-110"
                         onLoad={(e) => {
-                          setLoading(false);
+                          setLoading(false)
+                          setLoadingSec(false)
                         }}
                       />
                     </div>
@@ -112,7 +113,7 @@ function PersonMovies({ personData, imgsData, setLoading }) {
                       className="p-3 rounded-lg border-2 border-white"
                       onClick={(e) => {
                         setMoviePage(moviepage - 10);
-                        setLoading(true);
+                        setLoadingSec(true);
                       }}
                     >
                       <RxDoubleArrowLeft color="white" fontSize={18} />
@@ -121,7 +122,7 @@ function PersonMovies({ personData, imgsData, setLoading }) {
                       className="p-3 rounded-lg border-2 border-white"
                       onClick={(e) => {
                         setMoviePage(moviepage + 10);
-                        setLoading(true);
+                        setLoadingSec(true);
                       }}
                     >
                       <RxDoubleArrowRight color="white" fontSize={18} />

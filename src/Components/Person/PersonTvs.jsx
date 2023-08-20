@@ -68,6 +68,7 @@ function PersonTvs({ personData, imgsData, setLoading }) {
                             className="w-full h-full object-center object-cover scale-110"
                             onLoad={(e) => {
                               setLoading(false);
+                              setLoadingSec(false);
                             }}
                           />
                         </div>

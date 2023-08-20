@@ -25,7 +25,7 @@ function GridMovies({ text, type, data, setPage, page }) {
       setLoadingSec(true);
     }, 1000);
     window.scrollTo({
-      top: 0,behavior:"smooth"
+      top: 0,
     });
   }
   useEffect(() => {

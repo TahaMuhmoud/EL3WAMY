@@ -44,8 +44,19 @@ function Eposides({ seasonDetails, setLoading }) {
     } else {
       section.scrollBy({ left: sizeInSmall, behavior: "smooth" });
     }
+  };
+  // REPLACE WHITE SPACE IN LINE TO
+  function replaceWS(line) {
+    return Array.from(line)
+      .map((litter) => {
+        if (litter === " " || litter === "/") {
+          return "♦";
+        } else {
+          return litter;
+        }
+      })
+      .join("");
   }
-
   return (
     <>
       {episodes.length > 0 ? (
@@ -77,7 +88,7 @@ function Eposides({ seasonDetails, setLoading }) {
                 {episodes.map((eposide, indx) => (
                   <Link
                     key={indx}
-                    to={`/eposide/${SeriesName}-${seriesID}/season-${season_number}/eposide-${eposide.episode_number}`}
+                    to={`/eposide/${replaceWS(SeriesName)}-${seriesID}/season-${season_number}/eposide-${eposide.episode_number}`}
                     className="w-full h-full min-w-full sm:max-w-[250px] sm:min-w-[250px] cursor-pointer group"
                     onClick={() => {
                       setLoading(true);

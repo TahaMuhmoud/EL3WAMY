@@ -60,7 +60,7 @@ export default function MainCarousel({ results }) {
                   <img
                     src={`${base_url}${backdrop_sizes[3]}${movie["backdrop_path"]}`}
                     alt=""
-                    className="min-w-full min-h-full max-w-full max-h-full inset-0 sm:object-none object-center"
+                    className="min-w-full min-h-full max-w-full max-h-full inset-0 object-cover object-center"
                   />
                   <Link
                     to={`/movie/${movie.id}`}

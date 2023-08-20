@@ -178,7 +178,11 @@ function SeasonLandingPage({ seasonDetails, setLoading }) {
             <div className="px-20 py-28 xl:px-32 2xl:px-44 w-full h-full hidden lg:block">
               <div className="relative w-full h-full shadow-2xl shadow-[#000000]">
                 <img
-                  src={`${base_url}${poster_sizes[4]}${poster_path}`}
+                  src={
+                    poster_path
+                      ? `${base_url}${poster_sizes[4]}${poster_path}`
+                      : `${base_url}${poster_sizes[4]}${backdrop_path}`
+                  }
                   alt=""
                   loading="lazy"
                   className="absolute inset-0 w-full h-full cursor-pointer hover:grayscale transition-all duration-200"

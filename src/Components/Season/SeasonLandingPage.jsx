@@ -45,7 +45,7 @@ function SeasonLandingPage({ seasonDetails, setLoading }) {
   return (
     <>
       {seasonDetails ? (
-        <div className="seriessec sec-bg w-full h-screen overflow-y-hidden">
+        <div className="relative seriessec sec-bg w-full h-screen overflow-y-hidden">
           {imgShow ? (
             posters[0] ? (
               <ImgLayout

@@ -34,7 +34,7 @@ function MovieLandingPage({ movieData, imagesPathData, setLoading }) {
   } = movieData;
   return (
     <>
-      <div className="moviesec sec-bg w-full h-screen pt-14 overflow-hidden">
+      <div className="moviesec sec-bg w-full h-screen pt-14 overflow-hidden relative">
         {bol ? (
           videos.results[0] ? (
             <Trailer

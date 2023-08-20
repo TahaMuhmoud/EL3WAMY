@@ -33,7 +33,7 @@ const TvLandingPage = ({ seriesData, setLoading }) => {
   }, [bol]);
   return (
     <>
-      <div className="moviesec sec-bg w-full h-screen overflow-y-hidden">
+      <div className="moviesec sec-bg w-full h-screen overflow-y-hidden relative">
         {bol ? (
           results[0] ? (
             <Trailer

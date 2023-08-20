@@ -60,7 +60,7 @@ function EposideDetails() {
     <section className="">
       {images && eposideData ? (
         <>
-          <div className="eposidesec sec-bg w-full h-screen overflow-y-hidden">
+          <div className="relative eposidesec sec-bg w-full h-screen overflow-y-hidden">
             {loading ? <Loading /> : ""}
             {imgShow ? (
               eposideData.images.stills[0] ? (

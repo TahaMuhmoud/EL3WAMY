@@ -49,7 +49,7 @@ function PersonLandingPage({ personData, imgsData }) {
 
   return (
     <div
-      className={`personsec sec-bg w-full h-screen pt-14 overflow-hidden bg-auto`}
+      className="relative personsec sec-bg w-full h-screen pt-14 overflow-hidden bg-auto"
       style={{
         background: `url('${
           profile_path

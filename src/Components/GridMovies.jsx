@@ -21,11 +21,9 @@ function GridMovies({ text, type, data, setPage, page }) {
   const [loading, setLoading] = useState(false);
   const [loadingSec, setLoadingSec] = useState(false);
   function handleNextPrevBtns() {
-    setTimeout(() => {
-      setLoadingSec(true);
-    }, 1000);
+    setLoadingSec(true);
     window.scrollTo({
-      top: 0,
+      top: 0,behavior:"smooth"
     });
   }
   useEffect(() => {
@@ -146,7 +144,9 @@ function GridMovies({ text, type, data, setPage, page }) {
                         className="w-full h-full object-center object-cover  scale-110 transition-all duration-300"
                         loading="lazy"
                         onLoad={(e) => {
-                          setLoadingSec(false);
+                          setTimeout(() => {
+                            setLoadingSec(false);
+                          }, 1000);
                         }}
                       />
                     </div>

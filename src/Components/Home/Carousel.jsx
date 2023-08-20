@@ -47,7 +47,7 @@ export default function MainCarousel({ results }) {
       <img
         src={`${base_url}${backdrop_sizes[3]}${results[0]["backdrop_path"]}`}
         alt=""
-        className="min-w-full min-h-full max-h-full absolute inset-0 -z-50 object-cover object-center"
+        className="min-w-full min-h-full max-w-full max-h-full inset-0 xl:object-cover object-center absolute"
       />
       <ul className="slides w-full relative h-full" ref={slides}>
         {results.length > 0 && configData

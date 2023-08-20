@@ -48,21 +48,20 @@ function PersonLandingPage({ personData, imgsData }) {
   }
 
   return (
-    <div className="relative personsec sec-bg w-full h-screen pt-14 overflow-hidden ">
-      <div
-        className="absolute w-screen h-full left-0 top-0 bg-repeat-round grayscale"
-        style={{
-          backgroundImage: `url('${
-            profile_path
-              ? `${base_url}${still_sizes[2]}${profile_path}`
-              : profiles.length > 0
-              ? `${base_url}${still_sizes[2]}${
-                  profiles[profiles.length - 1]["file_path"]
-                }`
-              : `${avatar}`
-          }')`,
-        }}
-      ></div>
+    <div
+      className="relative personsec sec-bg w-full h-screen pt-14 overflow-hidden bg-auto"
+      style={{
+        backgroundImage: `url('${
+          profile_path
+            ? `${base_url}${still_sizes[2]}${profile_path}`
+            : profiles.length > 0
+            ? `${base_url}${still_sizes[2]}${
+                profiles[profiles.length - 1]["file_path"]
+              }`
+            : `${avatar}`
+        }')`,
+      }}
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center absolute inset-0 z-10">
         <div className="details text-white py-20 px-5 sm:p-20 ">
           <div className="text flex flex-col items-center lg:block">

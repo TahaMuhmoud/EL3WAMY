@@ -5,7 +5,7 @@ function VideoNotavailable() {
   const params = useParams();
   const { id, type } = params;
   return (
-    <div className="container w-full h-screen flex flex-col items-center justify-center text-white">
+    <div className="container w-full h-screen flex flex-col items-center justify-center text-white m-auto">
       <div className="text-2xl md:text-4xl text-center">
         Video is not available now it will be here{" "}
         <span className="block text-mainColor-100 text-6xl md:text-9xl font-extrabold uppercase">

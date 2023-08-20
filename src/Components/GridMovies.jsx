@@ -5,13 +5,11 @@ import { RxDoubleArrowLeft, RxDoubleArrowRight } from "react-icons/rx";
 import { BiArrowToRight, BiArrowToLeft } from "react-icons/bi";
 import { BsFilterRight } from "react-icons/bs";
 import Loading from "../Pages/LoadingPage/Loading";
-import { Ripple, Tooltip, initTE } from "tw-elements";
 import { SortedDataContext } from "../SortedDataContext";
 import { GenersContext } from "../GenersContext";
 import SortMenu from "./SortMenu";
 import avatar from "../assets/avatar.svg";
 
-initTE({ Ripple, Tooltip });
 
 function GridMovies({ text, type, data, setPage, page }) {
   // CONFIGRATION DATA FOR BASE_URL IMAGES
@@ -21,10 +19,11 @@ function GridMovies({ text, type, data, setPage, page }) {
   let arr = [...new Array(50)];
   const { results, total_pages } = data;
   const [loading, setLoading] = useState(false);
+  const [loadingSec, setLoadingSec] = useState(false);
   function handleNextPrevBtns() {
-    setLoading(true);
+    setLoadingSec(true);
     window.scrollTo({
-      top: 0,
+      top: 0,behavior:"smooth"
     });
   }
   useEffect(() => {
@@ -108,19 +107,26 @@ function GridMovies({ text, type, data, setPage, page }) {
                   </button>
                 </div>
               </div>
-              <div className="flex flex-wrap justify-center gap-2 p-2 w-full h-full overflow-hidden">
+              <div className="relative flex flex-wrap justify-center gap-2 p-2 w-full h-full overflow-hidden">
+                {loadingSec ? (
+                  <div className="bg-gray-800 absolute inset-0 z-10 flex items-center justify-center animate-pulse">
+                    <div
+                      className="m-12 inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                      role="status"
+                    >
+                      <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                        Loading...
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  ""
+                )}
                 {results.map((movie, indx) => (
                   <Link
                     key={indx}
                     to={`/${type}/${movie.id}`}
                     className="w-[calc(50%-4px)] md:w-[calc(33.33333%-8px)] lg:w-[calc(20%-12px)] h-[400px] flex flex-col items-center border-2 border-transprent-1/5"
-                    data-te-toggle="tooltip"
-                    data-te-placement="center"
-                    data-te-ripple-init
-                    data-te-ripple-color="light"
-                    title={
-                      movie["title"] ? movie["title"] : movie["original_name"]
-                    }
                     onClick={() => {
                       setLoading(true);
                     }}
@@ -137,6 +143,9 @@ function GridMovies({ text, type, data, setPage, page }) {
                         alt=""
                         className="w-full h-full object-center object-cover  scale-110 transition-all duration-300"
                         loading="lazy"
+                        onLoad={(e) => {
+                          setLoadingSec(false);
+                        }}
                       />
                     </div>
                     <div className="w-full h-2/5 p-3 text-white">

@@ -21,7 +21,9 @@ function GridMovies({ text, type, data, setPage, page }) {
   const [loading, setLoading] = useState(false);
   const [loadingSec, setLoadingSec] = useState(false);
   function handleNextPrevBtns() {
-    setLoadingSec(true);
+    setTimeout(() => {
+      setLoadingSec(true);
+    }, 1000);
     window.scrollTo({
       top: 0,behavior:"smooth"
     });

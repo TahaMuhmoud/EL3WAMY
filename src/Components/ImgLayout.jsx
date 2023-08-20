@@ -25,6 +25,7 @@ function ImgLayout({ imgSrc, imgShow, setImgShow }) {
             setImgShow(false);
           }}
         />
+        
       </div>
     </div>
   );

@@ -137,10 +137,10 @@ function SeasonLandingPage({ seasonDetails, setLoading }) {
                       <p>images</p>
                     </div>
                     <div className="posters-imgs w-full flex flex-wrap justify-center gap-2 p-2 max-h-[180px] overflow-y-scroll">
-                      {posters.map((poster, indx) => (
+                      {posters.map((poster, i) => (
                         <>
                           <div
-                            key={indx}
+                            key={i}
                             className="img w-20 h-20 relative rounded-lg border-2 border-[#fff0] outline outline-1 outline-white overflow-hidden hover:scale-110 transition-all duration-500"
                           >
                             <img

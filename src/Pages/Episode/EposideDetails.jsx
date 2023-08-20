@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { getEposideData, getSeriesDetails } from "../../api";
 import { ConfigrationContext } from "../../ConfigrationContext";
@@ -53,6 +53,9 @@ function EposideDetails() {
     setShowActorsSec(!showActorsSec);
   }, [showActorsSec]);
   const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
   return (
     <section className="">
       {images && eposideData ? (

@@ -17,8 +17,10 @@ export default function Person() {
     setPersonDitails(personData);
   }, [personData]);
   const [loading, setLoading] = useState(true);
-  console.log(loading)
 
+  useEffect(() => {
+    setLoading(false);
+  }, []);
   return (
     <>
       {configData && personDitails ? (

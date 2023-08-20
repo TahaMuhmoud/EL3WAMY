@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ConfigrationContext } from "../../ConfigrationContext";
 import Cast from "../../Components/Cast";
 import { getSeasonDeatils} from "../../api";
@@ -15,6 +15,9 @@ function SeasonPage() {
   const seasonDetails = useLoaderData();
   const locationData = useLocation();
   const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
   return (
     <>
       {images !== undefined && seasonDetails ? (

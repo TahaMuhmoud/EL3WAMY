@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Cast from "../../Components/Cast";
 import { getMovieDetails } from "../../api";
@@ -14,6 +14,9 @@ export default function MovieDetails() {
   // GET THE MOVIE DATA BY LOADER
   let movieData = useLoaderData();
   const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
   return (
     <>
       {images && movieData ? (

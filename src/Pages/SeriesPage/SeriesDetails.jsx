@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getSeriesDetails } from "../../api";
 import { ConfigrationContext } from "../../ConfigrationContext";
@@ -17,6 +17,9 @@ function SeriesDetails() {
   let seriesData = useLoaderData();
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    setLoading(false);
+  }, []);
   return (
     <>
       {images && seriesData.status ? (

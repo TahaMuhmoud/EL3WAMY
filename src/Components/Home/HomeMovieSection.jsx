@@ -32,7 +32,7 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
     <section className="container w-full h-full mx-auto mt-5 md:mt-10 text-white p-3">
       <span className="bg-[#ffffff2c] w-1/2 h-[1px] mb-10"></span>
       <h1
-        className="w-fit text-3xl sm:text-5xl font-extrabold pb-5 bg-gradient-to-r from-mainColor-100 to-black"
+        className="w-fit text-3xl sm:text-5xl font-extrabold pb-5 bg-gradient-to-r from-mainColor-100 to-[#1b002f]"
         style={{
           WebkitTextStroke: "5px transparent",
           WebkitTextFillColor: "black",

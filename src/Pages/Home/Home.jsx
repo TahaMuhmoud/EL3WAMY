@@ -28,7 +28,9 @@ export const Home = () => {
   // HANDLE SHOWING THE LODING SCREEN WHEN CLICK ON MOVIE CARD
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   }, []);
   return (
     <>

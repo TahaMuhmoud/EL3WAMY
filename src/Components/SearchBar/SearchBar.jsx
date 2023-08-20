@@ -3,13 +3,15 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { Ripple, initTE } from "tw-elements";
 import { ConfigrationContext } from "../../ConfigrationContext";
 import { Link } from "react-router-dom";
+import avatar from "../../assets/avatar.svg";
 
 initTE({ Ripple });
 function SearchBar({ showInLarge, setMobileMenuOpen }) {
   // CONFIGRATION DATA FOR BASE_URL IMAGES
   let { configData } = useContext(ConfigrationContext);
   let { images } = configData;
-  let { base_url, profile_sizes } = images;
+  let { base_url, profile_sizes, still_sizes, backdrop_sizes, poster_sizes } =
+    images;
   const searchInp = useRef();
 
   const [inputFocus, setInputFocus] = useState(false);
@@ -101,21 +103,23 @@ function SearchBar({ showInLarge, setMobileMenuOpen }) {
                 <div className="img h-full w-full col-span-1  overflow-hidden">
                   <img
                     src={
-                      movie.media_type === "movie"
+                      movie.media_type === "person"
+                        ? movie.profile_path
+                          ? `${base_url}${profile_sizes[1]}${movie.profile_path}`
+                          : `${avatar}`
+                        : movie.media_type === "movie"
                         ? movie.poster_path
-                          ? `${base_url}${profile_sizes[3]}${movie.poster_path}`
-                          : `${base_url}${profile_sizes[3]}${movie.backdrop_path}`
+                          ? `${base_url}${poster_sizes[3]}${movie.poster_path}`
+                          : `${base_url}${backdrop_sizes[3]}${movie.backdrop_path}`
                         : movie.media_type === "tv"
                         ? movie.poster_path
-                          ? `${base_url}${profile_sizes[3]}${movie.poster_path}`
-                          : `${base_url}${profile_sizes[3]}${movie.backdrop_path}`
-                        : movie.media_type === "person"
-                        ? `${base_url}${profile_sizes[3]}${movie.profile_path}`
+                          ? `${base_url}${poster_sizes[3]}${movie.poster_path}`
+                          : `${base_url}${backdrop_sizes[3]}${movie.backdrop_path}`
                         : ""
                     }
                     alt=""
                     loading="lazy"
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
                 <div

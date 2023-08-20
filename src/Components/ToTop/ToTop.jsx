@@ -15,7 +15,7 @@ function ToTop() {
   });
   return (
     <div
-      className="hidden fixed bottom-24 right-10 rounded-full cursor-pointer"
+      className="hidden fixed bottom-24 right-6 sm:right-10 rounded-full cursor-pointer"
       ref={totopEl}
     >
       <TbCircleArrowUpFilled

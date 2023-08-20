@@ -3,10 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
 @layer {
   .bb-grad {
     @apply bg-gradient-to-b from-[#000000];
@@ -22,7 +18,6 @@
     @apply after:content-[''] after:absolute after:top-0 after:left-0 after:inset-0
     after:bg-white-gradient-to-transparent;
   }
-  
 }
 
 :root {
@@ -42,16 +37,29 @@ a {
   color: inherit !important;
 }
 
-
-.active{
+.active {
   opacity: 1;
 }
 
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track{
+  border: .1px rgba(255, 255, 255, 0.127) solid;
+}
+body::-webkit-scrollbar-thumb{
+  background-image: linear-gradient(
+    to top,
+    transparent,
+    var(--mainClr),
+    transparent
+  );
+}
 .overveiw::-webkit-scrollbar,
 .biography::-webkit-scrollbar,
 .posters-imgs::-webkit-scrollbar,
 .searched-sec::-webkit-scrollbar,
-.home-sec::-webkit-scrollbar {
+.home-sec::-webkit-scrollbar{
   width: 3px;
   height: 6px;
 }
@@ -59,7 +67,8 @@ a {
 .biography::-webkit-scrollbar-track,
 .posters-imgs::-webkit-scrollbar-track,
 .searched-sec::-webkit-scrollbar-track,
-.home-sec::-webkit-scrollbar-track {
+.home-sec::-webkit-scrollbar-track
+ {
   border: 1px rgba(255, 255, 255, 0.127) solid;
 }
 .overveiw::-webkit-scrollbar-thumb,
@@ -67,6 +76,11 @@ a {
 .posters-imgs::-webkit-scrollbar-thumb,
 .searched-sec::-webkit-scrollbar-thumb,
 .home-sec::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(90deg,transparent, var(--mainClr),transparent);
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    var(--mainClr),
+    transparent
+  );
   border-radius: 5px;
 }

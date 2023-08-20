@@ -121,9 +121,9 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
         <div className="flex justify-center mt-3 text-white">
           <Link
             to={`/${type}s/${sec}`}
-            className="block w-fit bg-mainColor-100 text-xl p-2 rounded-lg"
+            className="relative block w-fit border-1 border-mainColor-100 !text-mainColor-100 overflow-hidden after:content-['show_all'] after:text-white after:transition-all after:duration-500 after:absolute after:top-0 after:bottom-0 after:-left-full hover:after:inset-0 after:bg-mainColor-100 after:flex after:items-center after:justify-center z-0 text-xl p-2 rounded-lg"
           >
-            show all
+            <span>show all</span>
           </Link>
         </div>
       )}

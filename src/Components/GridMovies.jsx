@@ -30,7 +30,7 @@ function GridMovies({ text, type, data, setPage, page }) {
     if (loading) {
       setTimeout(() => {
         setLoading(false);
-      }, 1500);
+      }, 2000);
     }
   }, [loading]);
 
@@ -62,6 +62,7 @@ function GridMovies({ text, type, data, setPage, page }) {
                 setShowSortMenu={setShowSortMenu}
                 isSorted={isSorted}
                 setIsSorted={setIsSorted}
+                setLoading={setLoading}
               />
               <h1
                 className="text-6xl pb-10 sm:text-7xl font-extrabold  text-center bg-gradient-to-b sm:bg-gradient-to-r from-mainColor-100 to-black"
@@ -243,6 +244,7 @@ function GridMovies({ text, type, data, setPage, page }) {
                 setShowSortMenu={setShowSortMenu}
                 isSorted={isSorted}
                 setIsSorted={setIsSorted}
+                setLoading={setLoading}
               />
 
               <h1

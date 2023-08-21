@@ -94,7 +94,7 @@ const TvLandingPage = ({ seriesData, setLoading }) => {
                 {adult === "true" ? "+7" : "+18"}
               </span>
             </div>
-            <div className="overveiw text-center mb-8 sm:w-3/4 text-xl h-14 overflow-y-auto snap-none touch-pan-y pr-2">
+            <div className="overveiw text-center mb-8 sm:w-3/4 text-xl h-20 overflow-y-auto snap-none touch-pan-y pr-2">
               <p>{overview || ""}</p>
             </div>
             <div className="langs flex items-center flex-wrap gap-1 mb-5">

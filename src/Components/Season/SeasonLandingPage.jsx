@@ -95,7 +95,7 @@ function SeasonLandingPage({ seasonDetails, setLoading }) {
                 </h1>
 
                 {overview ? (
-                  <div className="overveiw mb-3 sm:mb-6 text-xl text-center sm:text-left h-14 overflow-y-scroll snap-none touch-pan-y pr-2">
+                  <div className="overveiw mb-3 sm:mb-6 text-xl text-center sm:text-left h-20 overflow-y-scroll snap-none touch-pan-y pr-2">
                     <p>{overview || ""}</p>
                   </div>
                 ) : (

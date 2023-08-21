@@ -108,7 +108,7 @@ function PersonLandingPage({ personData, imgsData }) {
             </div>
 
             {biography ? (
-              <div className="biography selection:bg-mainColor-100 mb-8 sm:text-xl max-h-24 md:max-h-40 overflow-y-scroll snap-none touch-pan-y pr-2">
+              <div className="biography h-20 selection:bg-mainColor-100 mb-8 sm:text-xl max-h-24 md:max-h-40 overflow-y-scroll snap-none touch-pan-y pr-2">
                 <p>{biography}</p>
               </div>
             ) : (

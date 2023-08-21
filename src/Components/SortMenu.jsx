@@ -27,6 +27,7 @@ function SortMenu({
   setShowSortMenu,
   isSorted,
   setIsSorted,
+  setLoading,
 }) {
   const {
     genersData: { genres },
@@ -150,7 +151,9 @@ function SortMenu({
                   htmlFor={`opt-${indx + 1}`}
                   className="px-3 text-sm md:text-lg bg-mainColor-50 rounded-full shadow-[-3px_-3px_5px_var(--mainClr),3px_3px_5px_rgba(0,0,0,.2)] cursor-pointer"
                   onClick={(e) => {
-                    e.target.classList.toggle("shadow-none");
+                    e.target.classList.toggle(
+                      "shadow-[inset_0px_15px_10px_black]"
+                    );
                   }}
                 >
                   <input
@@ -232,6 +235,7 @@ function SortMenu({
                 setType(type);
                 setIsSorted(true);
                 handleOpenSortMenu();
+                setLoading(true);
               }}
             >
               filter

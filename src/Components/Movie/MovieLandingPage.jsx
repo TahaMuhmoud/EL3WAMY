@@ -90,7 +90,7 @@ function MovieLandingPage({ movieData, imagesPathData, setLoading }) {
                   {(runtime / 60).toFixed(0) + "h " + (runtime % 60) + "m"}
                 </span>
               </div>
-              <div className="overveiw mb-8 text-xl h-14 overflow-y-scroll snap-none touch-pan-y pr-2">
+              <div className="overveiw mb-8 text-xl h-20 overflow-y-scroll snap-none touch-pan-y pr-2">
                 <p>{overview || ""}</p>
               </div>
               <div className="langs flex items-center flex-wrap gap-1 mb-14">

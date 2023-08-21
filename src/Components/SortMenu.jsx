@@ -175,6 +175,7 @@ function SortMenu({
             <div className="w-full h-10 relative">
               <input
                 type="text"
+                autoComplete="true"
                 name="lang-inp"
                 id="lang-inp"
                 className="w-full h-full text-lg bg-transparent border-1 outline-none p-5  

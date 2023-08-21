@@ -62,7 +62,7 @@ function GridMovies({ text, type, data, setPage, page }) {
                 setShowSortMenu={setShowSortMenu}
                 isSorted={isSorted}
                 setIsSorted={setIsSorted}
-                setLoading={setLoading}
+                setLoadingSec={setLoadingSec}
               />
               <h1
                 className="text-6xl pb-10 sm:text-7xl font-extrabold  text-center bg-gradient-to-b sm:bg-gradient-to-r from-mainColor-100 to-black"
@@ -244,7 +244,7 @@ function GridMovies({ text, type, data, setPage, page }) {
                 setShowSortMenu={setShowSortMenu}
                 isSorted={isSorted}
                 setIsSorted={setIsSorted}
-                setLoading={setLoading}
+                setLoadingSec={setLoadingSec}
               />
 
               <h1
@@ -303,7 +303,21 @@ function GridMovies({ text, type, data, setPage, page }) {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-wrap justify-center gap-2 p-2 w-full h-full overflow-hidden">
+              <div className="relative flex flex-wrap justify-center gap-2 p-2 w-full h-full overflow-hidden">
+                {loadingSec ? (
+                  <div className="bg-gray-800 absolute inset-0 z-10 flex items-center justify-center animate-pulse">
+                    <div
+                      className="m-12 inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                      role="status"
+                    >
+                      <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                        Loading...
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  ""
+                )}
                 {sortedData.results.map((movie, indx) => (
                   <Link
                     key={indx}
@@ -332,6 +346,11 @@ function GridMovies({ text, type, data, setPage, page }) {
                         alt=""
                         loading="lazy"
                         className="w-full h-full object-center object-cover scale-110 transition-all duration-300"
+                        onLoad={(e) => {
+                          setTimeout(() => {
+                            setLoadingSec(false);
+                          }, 1000);
+                        }}
                       />
                     </div>
                     <div className="w-full h-2/5 p-3 text-white">

@@ -27,7 +27,7 @@ function SortMenu({
   setShowSortMenu,
   isSorted,
   setIsSorted,
-  setLoading,
+  setLoadingSec,
 }) {
   const {
     genersData: { genres },
@@ -235,7 +235,7 @@ function SortMenu({
                 setType(type);
                 setIsSorted(true);
                 handleOpenSortMenu();
-                setLoading(true);
+                setLoadingSec(true);
               }}
             >
               filter

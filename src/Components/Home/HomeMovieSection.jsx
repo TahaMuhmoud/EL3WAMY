@@ -81,14 +81,14 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
               </div>
 
               <div className="px-2">
-                <h3 className="text-lg font-bold pb-2">
+                <h3 className="text-lg font-bold pb-2 break-words">
                   {type === "tv"
-                    ? movie["name"].length < 20
+                    ? movie["name"].length < 24
                       ? movie["name"]
-                      : movie["name"].slice(0, 20) + "..."
-                    : movie["title"].length < 20
+                      : movie["name"].slice(0, 24) + "..."
+                    : movie["title"].length < 24
                     ? movie["title"]
-                    : movie["title"].slice(0, 20) + "..."}
+                    : movie["title"].slice(0, 24) + "..."}
                 </h3>
                 <div className="italic text-sm text-[#9d9d9d]">
                   {type === "tv" ? "first air date" : "release date"}

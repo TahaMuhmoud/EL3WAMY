@@ -16,7 +16,7 @@ export const Home = () => {
   // GET BY LOADER FROM API
   let loaderData = useLoaderData();
   const {
-    trending_movies,
+    trendingAll,
     popular_movies,
     topRated_movies,
     trending_tv,
@@ -30,19 +30,19 @@ export const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 3000);
   }, []);
   return (
     <>
       {configData.images && loaderData ? (
         <div
-          className={`home w-full h-full ${
-            loading ? "h-[calc(100vh-92px)] overflow-hidden" : ""
+          className={`home w-full ${
+            loading ? "h-[calc(100vh-92px)] overflow-hidden" : "h-full"
           }`}
         >
           <div className="h-full text-9xl mx-auto flex flex-col items-center">
             {loading === true ? <Loading /> : ""}
-            <LandingPage results={trending_movies} />
+            <LandingPage results={trendingAll} />
             {/*  */}
             {/*  */}
             {/*  */}
@@ -96,7 +96,7 @@ export async function loader(params) {
     trendingTv = await getTrendingTv(),
     topratedTv = await getTopRatedTv();
   let all = {
-    trending_movies: [...trending.results],
+    trendingAll: [...trending.results],
     popular_movies: [...popularMovies.results],
     topRated_movies: [...topRatedMovies.results],
     trending_tv: [...trendingTv.results],

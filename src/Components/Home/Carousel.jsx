@@ -36,12 +36,13 @@ export default function MainCarousel({ results }) {
   // CONFIGRATION DATA FOR BASE_URL IMAGES
   let { configData } = useContext(ConfigrationContext);
   let { base_url, backdrop_sizes } = configData.images;
-  // GET THE TRENDING MOVIES DATA BY LOADER
-  let navigate = useNavigate();
-  // HANDLE WATCH ICON IN CLICK
-  function handleWatchIcon(movie) {
-    navigate(`/movie/${movie.id}`);
-  }
+  // // GET THE TRENDING MOVIES DATA BY LOADER
+  // let navigate = useNavigate();
+  // // HANDLE WATCH ICON IN CLICK
+  // function handleWatchIcon(movie) {
+  //   console.log(movie.media_type);
+  //   // navigate(`/movie/${movie.id}`);
+  // }
   return (
     <section className="carousel sec-bg mx-auto w-full h-full text-white absolute inset-0 ">
       <img
@@ -63,7 +64,7 @@ export default function MainCarousel({ results }) {
                     className="min-w-full min-h-full max-w-full max-h-full inset-0 object-cover object-center"
                   />
                   <Link
-                    to={`/movie/${movie.id}`}
+                    to={`/${movie.media_type}/${movie.id}`}
                     className="absolute bottom-0 left-0 w-full sm:w-[200px] h-[200px]  flex items-center justify-center sm:justify-end gap-3 z-50"
                   >
                     <VscDebugStart
@@ -84,16 +85,16 @@ export default function MainCarousel({ results }) {
                     className="min-w-full min-h-full max-h-full absolute inset-0 object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute bottom-0 left-0 w-full sm:w-[200px] h-[200px] flex items-center justify-center sm:justify-end gap-3 z-50">
+                  <Link
+                    to={`/${movie.media_type}/${movie.id}`}
+                    className="absolute bottom-0 left-0 w-full sm:w-[200px] h-[200px]  flex items-center justify-center sm:justify-end gap-3 z-50"
+                  >
                     <VscDebugStart
                       fontSize={70}
                       className="cursor-pointer border-8 border-[#ffffff76] rounded-full "
-                      onClick={(e) => {
-                        handleWatchIcon(movie);
-                      }}
                     />
-                    <span className="text-lg">watch</span>
-                  </div>
+                    <span className="text-lg cursor-pointer">watch</span>
+                  </Link>
                 </li>
               )
             )

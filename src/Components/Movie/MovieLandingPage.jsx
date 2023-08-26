@@ -59,7 +59,7 @@ function MovieLandingPage({ movieData, imagesPathData, setLoading }) {
           loading="lazy"
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center absolute inset-0 z-10 ">
-          <div className="details text-white p-10 sm:p-20">
+          <div className="details text-white p-5 sm:p-20">
             <div className="text flex flex-col items-center lg:block">
               <h1 className="titel text-4xl sm:text-5xl text-center lg:text-left font-bold mb-3 mt-6">
                 {`${original_title} (${release_date?.split("-")[0]})` || " cc"}

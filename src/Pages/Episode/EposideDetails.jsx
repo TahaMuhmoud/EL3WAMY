@@ -99,7 +99,7 @@ function EposideDetails() {
               className="min-w-full min-h-full max-h-full absolute inset-0 object-cover object-center -z-50"
             />
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center absolute inset-0 z-10 ">
-              <div className="details h-full text-white p-10 sm:p-20 sm:pr-10">
+              <div className="details h-full text-white p-5 sm:p-20 sm:pr-10">
                 <div className="text h-full relative flex flex-col items-center justify-center">
                   <div
                     className="hidden sm:flex items-center h-14 italic text-gray-400 w-full gap-1 rounded-full border-1

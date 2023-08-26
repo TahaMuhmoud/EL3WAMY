@@ -103,17 +103,17 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
           <TbArrowBadgeRight className="text-2xl sm:text-3xl" />
         </button>
       </div>
-      {text === "trending tvs" ? (
-        ""
-      ) : (
+      {text !== "trending tvs" ? (
         <div className="flex justify-center mt-3 text-white">
           <Link
             to={`/${type}s/${sec}`}
-            className="relative block w-fit border-1 border-mainColor-100 !text-mainColor-100 overflow-hidden after:content-['show_all'] after:text-white after:transition-all after:duration-500 after:absolute after:top-0 after:bottom-0 after:-left-full hover:after:inset-0 after:bg-mainColor-100 after:flex after:items-center after:justify-center z-0 text-xl p-2 rounded-lg"
+            className="relative block w-fit border-1 border-mainColor-100 !text-mainColor-100 overflow-hidden after:content-['show_all'] after:w-full after:h-full after:text-white after:transition-all after:duration-500 after:delay-100 after:absolute after:top-0 after:bottom-0 after:-left-full hover:after:left-0 after:bg-mainColor-100 after:flex after:items-center after:justify-center z-0 text-xl p-2 rounded-lg"
           >
-            <span>show all</span>
+            <span className="">show all</span>
           </Link>
         </div>
+      ) : (
+        ""
       )}
     </section>
   );

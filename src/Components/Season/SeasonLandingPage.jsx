@@ -74,9 +74,9 @@ function SeasonLandingPage({ seasonDetails, setLoading }) {
           )}
           <img
             src={
-              backdrop_path
+              backdrop_path && window.innerWidth>576
                 ? `${base_url}${backdrop_sizes[3]}${backdrop_path}`
-                : `${base_url}${backdrop_sizes[3]}${poster_path}`
+                : `${base_url}${poster_sizes[5]}${poster_path}`
             }
             alt="movie img"
             loading="lazy"

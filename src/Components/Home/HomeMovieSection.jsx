@@ -21,11 +21,12 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
 
   // HANDLE FUNCTION OF CLICK ON [NEXT,PREV] BUTTONS
   function handlePrevORNextBtn(section, size, sizeInSmall) {
-    if (window.innerWidth > 576) {
       section.scrollBy({ left: size, behavior: "smooth" });
-    } else {
-      section.scrollBy({ left: sizeInSmall, behavior: "smooth" });
-    }
+    // if (window.innerWidth > 576) {
+    //   section.scrollBy({ left: size, behavior: "smooth" });
+    // } else {
+    //   section.scrollBy({ left: sizeInSmall, behavior: "smooth" });
+    // }
   }
 
   return (
@@ -42,21 +43,21 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
         {text}
       </h1>
       <span className="block w-1/4 h-2 bg-gradient-to-r from-mainColor-100 to-black"></span>
-      <div className="flex items-center text-white">
+      <div className="relative flex items-center text-white">
         <button
-          className="h-20 bg-mainColor-50 mr-2 animate-pulse"
+          className="h-40 bg-mainColor-50 animate-pulse absolute top-1/2 -translate-y-1/2 left-0 z-10"
           onClick={() => {
             handlePrevORNextBtn(
               sec_El.current,
-              -308,
+              -188,
               -sec_El.current.clientWidth - 8
             );
           }}
         >
-          <TbArrowBadgeLeft fontSize={30} />
+          <TbArrowBadgeLeft className="text-2xl sm:text-3xl" />
         </button>
         <div
-          className="home-sec w-full h-[300px] flex flex-nowrap relative gap-2 overflow-x-auto overflow-y-hidden text-white py-5"
+          className="home-sec w-full h-[410px] flex flex-nowrap relative gap-2 overflow-x-auto overflow-y-hidden text-white py-5"
           {...sec_Events.events}
           ref={sec_El}
         >
@@ -64,16 +65,16 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
             <Link
               key={indx}
               to={`/${type}/${movie.id}`}
-              className="w-full h-full min-w-full sm:min-w-[300px]"
+              className="w-full h-full min-w-[180px]"
               onClick={(e) => {
                 handleClickOnMovie();
               }}
             >
-              <div className="img relative w-full h-44 p-1 overflow-hidden rounded-lg">
+              <div className="img relative w-full h-64 p-1 overflow-hidden rounded-lg">
                 <img
                   src={`${base_url}${backdrop_sizes[3]}${movie["poster_path"]}`}
                   alt=""
-                  className="w-full h-full object-center object-cover scale-110"
+                  className="w-full h-full object-center object-fill scale-110"
                   loading="lazy"
                   width={300}
                   height={128}
@@ -83,12 +84,12 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
               <div className="px-2">
                 <h3 className="text-lg font-bold pb-2 break-words">
                   {type === "tv"
-                    ? movie["name"].length < 24
+                    ? movie["name"].length < 14
                       ? movie["name"]
-                      : movie["name"].slice(0, 24) + "..."
-                    : movie["title"].length < 24
+                      : movie["name"].slice(0, 14) + "..."
+                    : movie["title"].length < 14
                     ? movie["title"]
-                    : movie["title"].slice(0, 24) + "..."}
+                    : movie["title"].slice(0, 14) + "..."}
                 </h3>
                 <div className="italic text-sm text-[#9d9d9d]">
                   {type === "tv" ? "first air date" : "release date"}
@@ -103,16 +104,16 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
           ))}
         </div>
         <button
-          className="h-20 bg-mainColor-50 ml-2 animate-pulse"
+          className="h-40 bg-mainColor-50 animate-pulse absolute top-1/2 -translate-y-1/2 right-0 z-10"
           onClick={() => {
             handlePrevORNextBtn(
               sec_El.current,
-              308,
+              188,
               sec_El.current.clientWidth + 8
             );
           }}
         >
-          <TbArrowBadgeRight fontSize={30} />
+          <TbArrowBadgeRight className="text-2xl sm:text-3xl" />
         </button>
       </div>
       {text === "trending tvs" ? (

@@ -50,7 +50,7 @@ function MovieLandingPage({ movieData, imagesPathData, setLoading }) {
         )}
         <img
           src={
-            backdrop_path
+            backdrop_path && window.innerWidth>576
               ? `${base_url}${backdrop_sizes[3]}${backdrop_path}`
               : `${base_url}${backdrop_sizes[3]}${poster_path}`
           }

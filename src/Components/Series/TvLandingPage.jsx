@@ -15,6 +15,7 @@ const TvLandingPage = ({ seriesData, setLoading }) => {
   let {
     id,
     backdrop_path,
+    poster_path,
     videos: { results },
     adult,
     genres,
@@ -48,7 +49,11 @@ const TvLandingPage = ({ seriesData, setLoading }) => {
           ""
         )}
         <img
-          src={`${base_url}${backdrop_sizes[3]}${backdrop_path}`}
+          src={
+            poster_path && window.innerWidth < 576
+              ? `${base_url}${backdrop_sizes[3]}${poster_path}`
+              : `${base_url}${backdrop_sizes[3]}${backdrop_path}`
+          }
           alt="movie img"
           loading="lazy"
           className="min-w-full min-h-full max-h-full absolute inset-0 object-cover object-center -z-50"

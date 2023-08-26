@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ConfigrationContext } from "../../ConfigrationContext";
 import { VscDebugStart } from "react-icons/vsc";
+import { useState } from "react";
 
 export default function MainCarousel({ results }) {
   let slides = useRef();
@@ -43,25 +44,33 @@ export default function MainCarousel({ results }) {
   //   console.log(movie.media_type);
   //   // navigate(`/movie/${movie.id}`);
   // }
+  const [tx, setTx] = useState("");
+  window.onresize = (e) => {
+    if (e.target.innerWidth < 576) {
+      setTx("object-cover");
+    } else {
+      setTx("object-fill");
+    }
+  };
   return (
     <section className="carousel sec-bg mx-auto w-full h-full text-white absolute inset-0 ">
-      <img
-        src={`${base_url}${backdrop_sizes[3]}${results[0]["backdrop_path"]}`}
-        alt=""
-        className="min-w-full min-h-full max-w-full max-h-full inset-0 object-cover object-center absolute"
-      />
+      {/*  */}
       <ul className="slides w-full relative h-full" ref={slides}>
         {results.length > 0 && configData
           ? results.map((movie, indx) =>
               indx === 0 ? (
                 <li
                   key={indx}
-                  className="w-full h-full absolute top-0  opacity-0 transition-all duration-300 active"
+                  className="w-full h-full absolute top-0 opacity-0 transition-all duration-300 active"
                 >
                   <img
-                    src={`${base_url}${backdrop_sizes[3]}${movie["backdrop_path"]}`}
+                    src={
+                      movie["poster_path"] && window.innerWidth < 576
+                        ? `${base_url}${backdrop_sizes[3]}${movie["poster_path"]}`
+                        : `${base_url}${backdrop_sizes[3]}${movie["backdrop_path"]}`
+                    }
                     alt=""
-                    className="min-w-full min-h-full max-w-full max-h-full inset-0 object-cover object-center"
+                    className={`min-w-full min-h-full max-h-full absolute inset-0 ${tx} object-center`}
                   />
                   <Link
                     to={`/${movie.media_type}/${movie.id}`}
@@ -80,9 +89,13 @@ export default function MainCarousel({ results }) {
                   className="w-full h-full absolute top-0  opacity-0 transition-all duration-300"
                 >
                   <img
-                    src={`${base_url}${backdrop_sizes[3]}${movie["backdrop_path"]}`}
+                    src={
+                      movie["poster_path"] && window.innerWidth < 576
+                        ? `${base_url}${backdrop_sizes[3]}${movie["poster_path"]}`
+                        : `${base_url}${backdrop_sizes[3]}${movie["backdrop_path"]}`
+                    }
                     alt=""
-                    className="min-w-full min-h-full max-h-full absolute inset-0 object-cover"
+                    className={`min-w-full min-h-full max-h-full absolute inset-0 ${tx} object-center`}
                     loading="lazy"
                   />
                   <Link

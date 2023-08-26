@@ -48,20 +48,27 @@ function PersonLandingPage({ personData, imgsData }) {
   }
 
   return (
-    <div
-      className="relative personsec sec-bg w-full h-screen pt-14 overflow-hidden bg-auto"
-      style={{
-        backgroundImage: `url('${
-          profile_path
-            ? `${base_url}${still_sizes[2]}${profile_path}`
-            : profiles.length > 0
-            ? `${base_url}${still_sizes[2]}${
-                profiles[profiles.length - 1]["file_path"]
-              }`
-            : `${avatar}`
-        }')`,
-      }}
-    >
+    <div className="relative personsec sec-bg w-full h-screen pt-14 overflow-hidden ">
+      <div
+        className="absolute inset-0 bg-cover sm:bg-auto bg-center"
+        style={{
+          backgroundImage: `url('${
+            profile_path
+              ? `${base_url}${still_sizes[2]}${profile_path}`
+              : profiles.length > 0
+              ? `${base_url}${still_sizes[2]}${
+                  profiles[profiles.length - 1]["file_path"]
+                }`
+              : `${avatar}`
+          }')`,
+        }}
+      >
+        {deathday ? (
+          <div className="bg-black sm:w-96 w-52 h-10 sm:h-20 -rotate-45 absolute -left-16 top-10"></div>
+        ) : (
+          ""
+        )}
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center absolute inset-0 z-10">
         <div className="details text-white py-20 px-5 sm:p-20 ">
           <div className="text flex flex-col items-center lg:block">
@@ -142,7 +149,7 @@ function PersonLandingPage({ personData, imgsData }) {
                 </span>
               ) : (
                 <span className="inline-flex items-center rounded-md  px-2 py-1 text-sm font-medium ring-1 ring-inset ring-mainColor-100 mr-1.5">
-                  <GoDotFill color="green" />
+                  <GoDotFill color="green" className="animate-pulse" />
                   alive
                 </span>
               )}

@@ -48,7 +48,7 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
           <TbArrowBadgeLeft className="text-2xl sm:text-3xl" />
         </button>
         <div
-          className="home-sec w-full h-[410px] flex flex-nowrap relative gap-2 overflow-x-auto overflow-y-hidden text-white py-5"
+          className="home-sec w-full h-[410px] flex flex-nowrap relative gap-2 overflow-x-auto overflow-y-hidden text-white p-2 py-5"
           {...sec_Events.events}
           ref={sec_El}
         >
@@ -61,11 +61,11 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
                 handleClickOnMovie();
               }}
             >
-              <div className="img relative w-full h-64 p-1 overflow-hidden rounded-lg">
+              <div className="img relative w-full h-64 overflow-hidden rounded-xl shadow-[0px_0px_5px_0px_#ffffff6b] hover:shadow-none  border-4 hover:border-none border-black outline-1 outline hover:outline-none outline-gray-600 transition-all duration-300 delay-100">
                 <img
                   src={`${base_url}${backdrop_sizes[3]}${movie["poster_path"]}`}
                   alt=""
-                  className="w-full h-full object-center object-fill scale-110"
+                  className="w-full h-full object-center object-fill"
                   loading="lazy"
                   width={300}
                   height={128}

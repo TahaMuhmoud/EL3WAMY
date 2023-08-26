@@ -37,21 +37,7 @@ export default function MainCarousel({ results }) {
   // CONFIGRATION DATA FOR BASE_URL IMAGES
   let { configData } = useContext(ConfigrationContext);
   let { base_url, backdrop_sizes } = configData.images;
-  // // GET THE TRENDING MOVIES DATA BY LOADER
-  // let navigate = useNavigate();
-  // // HANDLE WATCH ICON IN CLICK
-  // function handleWatchIcon(movie) {
-  //   console.log(movie.media_type);
-  //   // navigate(`/movie/${movie.id}`);
-  // }
-  const [tx, setTx] = useState("");
-  window.onresize = (e) => {
-    if (e.target.innerWidth < 576) {
-      setTx("object-cover");
-    } else {
-      setTx("object-fill");
-    }
-  };
+  
   return (
     <section className="carousel sec-bg mx-auto w-full h-full text-white absolute inset-0 ">
       {/*  */}
@@ -70,7 +56,7 @@ export default function MainCarousel({ results }) {
                         : `${base_url}${backdrop_sizes[3]}${movie["backdrop_path"]}`
                     }
                     alt=""
-                    className={`min-w-full min-h-full max-h-full absolute inset-0 ${tx} object-center`}
+                    className={`min-w-full min-h-full max-h-full absolute inset-0 object-cover object-center`}
                   />
                   <Link
                     to={`/${movie.media_type}/${movie.id}`}
@@ -95,7 +81,7 @@ export default function MainCarousel({ results }) {
                         : `${base_url}${backdrop_sizes[3]}${movie["backdrop_path"]}`
                     }
                     alt=""
-                    className={`min-w-full min-h-full max-h-full absolute inset-0 ${tx} object-center`}
+                    className={`min-w-full min-h-full max-h-full absolute inset-0 object-cover object-center`}
                     loading="lazy"
                   />
                   <Link

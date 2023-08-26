@@ -32,7 +32,6 @@ function SortMenu({
   const {
     genersData: { genres },
   } = useContext(GenersContext);
-  console.log(genres);
   let { langsData } = useContext(LanguagesContext);
   const sortmenu = useRef();
   const selectSortByEl = useRef();
@@ -85,7 +84,6 @@ function SortMenu({
       });
       setarr(x);
     };
-    console.log(arr);
   });
   return (
     <>

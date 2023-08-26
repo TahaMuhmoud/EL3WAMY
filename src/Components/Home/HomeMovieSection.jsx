@@ -20,13 +20,8 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
   }
 
   // HANDLE FUNCTION OF CLICK ON [NEXT,PREV] BUTTONS
-  function handlePrevORNextBtn(section, size, sizeInSmall) {
-      section.scrollBy({ left: size, behavior: "smooth" });
-    // if (window.innerWidth > 576) {
-    //   section.scrollBy({ left: size, behavior: "smooth" });
-    // } else {
-    //   section.scrollBy({ left: sizeInSmall, behavior: "smooth" });
-    // }
+  function handlePrevORNextBtn(section, size) {
+    section.scrollBy({ left: size, behavior: "smooth" });
   }
 
   return (
@@ -47,11 +42,7 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
         <button
           className="h-40 bg-mainColor-50 animate-pulse absolute top-1/2 -translate-y-1/2 left-0 z-10"
           onClick={() => {
-            handlePrevORNextBtn(
-              sec_El.current,
-              -188,
-              -sec_El.current.clientWidth - 8
-            );
+            handlePrevORNextBtn(sec_El.current, -188);
           }}
         >
           <TbArrowBadgeLeft className="text-2xl sm:text-3xl" />
@@ -106,11 +97,7 @@ function HomeMovieSection({ data, text, type, sec, setLoading, loading }) {
         <button
           className="h-40 bg-mainColor-50 animate-pulse absolute top-1/2 -translate-y-1/2 right-0 z-10"
           onClick={() => {
-            handlePrevORNextBtn(
-              sec_El.current,
-              188,
-              sec_El.current.clientWidth + 8
-            );
+            handlePrevORNextBtn(sec_El.current, 188);
           }}
         >
           <TbArrowBadgeRight className="text-2xl sm:text-3xl" />

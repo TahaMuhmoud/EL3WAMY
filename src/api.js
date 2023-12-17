@@ -165,8 +165,6 @@ export async function getSeriesDetails(id) {
   return data;
 }
 
-
-
 export async function getSeasonDeatils(id, season_number) {
   const options = {
     method: "GET",
@@ -185,9 +183,6 @@ export async function getSeasonDeatils(id, season_number) {
   return data;
 }
 
-
-
-
 export async function getEposideData(series_id, season_number, eposide_number) {
   const options = {
     method: "GET",
@@ -204,4 +199,19 @@ export async function getEposideData(series_id, season_number, eposide_number) {
     throw { message: "Fuckkkkkkkkkkkkkkkkk UUUUUUUUUUU", status: 400 };
   }
   return data;
+}
+
+export async function query(data) {
+  const response = await fetch(
+    "http://localhost:3000/api/v1/prediction/fb0e8cfc-e8a6-4072-89ed-2cf39512275d",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  );
+  const result = await response.json();
+  return result;
 }

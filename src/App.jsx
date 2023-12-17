@@ -26,6 +26,7 @@ import Loading from "./Pages/LoadingPage/Loading";
 import Movies from "./Pages/MoviesTypes/Movies";
 import Tvs from "./Pages/SeriesTypes/Tvs";
 import VideoNotavailable from "./Components/VideoNotavailable";
+import { BubbleChat } from "flowise-embed-react";
 const MovieDetailsLazy = React.lazy(() =>
   import("./Pages/MoviePage/MovieDetails")
 );
@@ -242,7 +243,15 @@ function App() {
       </Route>
     )
   );
-  return <RouterProvider router={browserRouter} />;
+  return (
+    <>
+      <RouterProvider router={browserRouter} />
+      <BubbleChat
+        chatflowid="fb0e8cfc-e8a6-4072-89ed-2cf39512275d"
+        apiHost="http://localhost:3000"
+      />
+    </>
+  );
 }
 
 export default App;

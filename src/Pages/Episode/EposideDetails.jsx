@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import { getEposideData, getSeriesDetails } from "../../api";
+import { getEposideData, getSeriesDetails, query } from "../../api";
 import { ConfigrationContext } from "../../ConfigrationContext";
 import Trailer from "../../Components/Trailer/Trailer";
 import PopUp from "../../Components/Trailer/NoTrailerPopUp";
@@ -157,7 +157,7 @@ function EposideDetails() {
                                 alt=""
                                 loading="lazy"
                                 className="w-full h-full hover:scale-90 transition-all duration-500 object-center object-cover cursor-pointer"
-                                onClick={(e) => {
+                                onClick={() => {
                                   showTrailer(video.key);
                                 }}
                               />
@@ -198,7 +198,7 @@ function EposideDetails() {
                   <div className="flex items-center gap-3 mt-5">
                     <div
                       className="btn cursor-pointer flex gap-1 sm:gap-2 bg-[#ffffff4a] p-3 sm:pr-5 rounded-full hover:bg-[#ffffff00] hover:border-white hover:border-1"
-                      onClick={(e) => {
+                      onClick={() => {
                         showTrailer();
                       }}
                     >
@@ -244,7 +244,7 @@ function EposideDetails() {
             </div>
             <div
               className="toggle-icon text-gray-400 flex flex-col items-center absolute bottom-10 left-1/2 -translate-x-1/2 z-10 cursor-pointer"
-              onClick={(e) => {
+              onClick={() => {
                 showAllSec();
               }}
             >

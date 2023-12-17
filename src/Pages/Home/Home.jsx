@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useEffect, useState } from "react";
 import LandingPage from "../../Components/Home/LandingPage";
 import { useLoaderData } from "react-router-dom";

@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import { getEposideData, getSeriesDetails, query } from "../../api";
+import { getEposideData, getSeriesDetails } from "../../api";
 import { ConfigrationContext } from "../../ConfigrationContext";
 import Trailer from "../../Components/Trailer/Trailer";
 import PopUp from "../../Components/Trailer/NoTrailerPopUp";

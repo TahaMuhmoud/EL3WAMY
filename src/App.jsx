@@ -27,41 +27,41 @@ import Movies from "./Pages/MoviesTypes/Movies";
 import Tvs from "./Pages/SeriesTypes/Tvs";
 import VideoNotavailable from "./Components/VideoNotavailable";
 import { BubbleChat } from "flowise-embed-react";
-const MovieDetailsLazy = React.lazy(() =>
-  import("./Pages/MoviePage/MovieDetails")
+const MovieDetailsLazy = React.lazy(
+  () => import("./Pages/MoviePage/MovieDetails")
 );
-const SeriesDetailsLazy = React.lazy(() =>
-  import("./Pages/SeriesPage/SeriesDetails")
+const SeriesDetailsLazy = React.lazy(
+  () => import("./Pages/SeriesPage/SeriesDetails")
 );
 
-const PopularMoviesLazy = React.lazy(() =>
-  import("./Pages/MoviesTypes/Popular")
+const PopularMoviesLazy = React.lazy(
+  () => import("./Pages/MoviesTypes/Popular")
 );
-const TopRatedMoviesLazy = React.lazy(() =>
-  import("./Pages/MoviesTypes/TopRated")
+const TopRatedMoviesLazy = React.lazy(
+  () => import("./Pages/MoviesTypes/TopRated")
 );
-const MoviesUpcomingLazy = React.lazy(() =>
-  import("./Pages/MoviesTypes/MoviesUpcoming")
+const MoviesUpcomingLazy = React.lazy(
+  () => import("./Pages/MoviesTypes/MoviesUpcoming")
 );
-const MoviesNowPlayingLazy = React.lazy(() =>
-  import("./Pages/MoviesTypes/MoviesNowPlaying")
+const MoviesNowPlayingLazy = React.lazy(
+  () => import("./Pages/MoviesTypes/MoviesNowPlaying")
 );
 
 // .........
 // .........
 // .........
 
-const PopularTvsLazy = React.lazy(() =>
-  import("./Pages/SeriesTypes/PopularTvs")
+const PopularTvsLazy = React.lazy(
+  () => import("./Pages/SeriesTypes/PopularTvs")
 );
-const TopRatedTvsLazy = React.lazy(() =>
-  import("./Pages/SeriesTypes/TopRatedTvs")
+const TopRatedTvsLazy = React.lazy(
+  () => import("./Pages/SeriesTypes/TopRatedTvs")
 );
-const TvsOntheairLazy = React.lazy(() =>
-  import("./Pages/SeriesTypes/TvsOntheair")
+const TvsOntheairLazy = React.lazy(
+  () => import("./Pages/SeriesTypes/TvsOntheair")
 );
-const AiringtodayTvsLazy = React.lazy(() =>
-  import("./Pages/SeriesTypes/AiringtodayTvs")
+const AiringtodayTvsLazy = React.lazy(
+  () => import("./Pages/SeriesTypes/AiringtodayTvs")
 );
 
 function App() {
@@ -130,11 +130,7 @@ function App() {
             </Route>
           </Route>
         </Route>
-        <Route
-          path="/person"
-          element={<Person />}
-          loader={personDetailsLoader}
-        >
+        <Route path="/person" element={<Person />} loader={personDetailsLoader}>
           <Route path=":id" element={<Person />} loader={personDetailsLoader} />
         </Route>
 
@@ -249,6 +245,27 @@ function App() {
       <BubbleChat
         chatflowid="fb0e8cfc-e8a6-4072-89ed-2cf39512275d"
         apiHost="http://localhost:3000"
+        theme={{
+          button: {
+            backgroundColor: "#9501ff",
+            size: "large",
+          },
+          chatWindow: {
+            welcomeMessage:
+              "Hi, i'm here to recommend you a movies as the movie you like",
+            backgroundColor: "#ffffff",
+            height: 500,
+            width: 300,
+          },
+          userMessage: {
+            backgroundColor: "#9501ff",
+            textColor: "#ffffff",
+          },
+          textInput: {
+            placeholder: "Type movie name",
+            sendButtonColor: "#9501ff",
+          },
+        }}
       />
     </>
   );

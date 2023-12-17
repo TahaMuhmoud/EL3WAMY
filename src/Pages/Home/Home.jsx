@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import LandingPage from "../../Components/Home/LandingPage";
 import { useLoaderData } from "react-router-dom";
 import {
@@ -7,7 +7,6 @@ import {
   getTopRatedTv,
   getTrending,
   getTrendingTv,
-  query,
 } from "../../api";
 import { ConfigrationContext } from "../../ConfigrationContext";
 import Loading from "../LoadingPage/Loading";
@@ -25,21 +24,6 @@ export const Home = () => {
   } = loaderData;
   // CONFIGRATION DATA FOR BASE_URL IMAGES
   let { configData } = useContext(ConfigrationContext);
-
-
-
-  //
-  
-
-
-  
-
-
-
-
-
-
-
   // HANDLE SHOWING THE LODING SCREEN WHEN CLICK ON MOVIE CARD
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -118,6 +102,5 @@ export async function loader(params) {
     trending_tv: [...trendingTv.results],
     toprated_tv: [...topratedTv.results],
   };
-  // query({ question: "Hey, how are you?" });
   return all;
 }

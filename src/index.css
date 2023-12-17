@@ -22,7 +22,7 @@
 
 :root {
   --mainClr: #9501ff;
-  --mainClr-50: hsla(275, 100%, 50%, 0.5);
+  --mainClr-50: #9500ff80;
 }
 * {
   text-transform: capitalize;
